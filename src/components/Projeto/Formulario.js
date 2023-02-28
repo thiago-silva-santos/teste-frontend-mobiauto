@@ -153,26 +153,27 @@ export default function Formulario() {
 
   }
 
+  const url = "https://parallelum.com.br/fipe/api/v1/carros/marcas"
   async function loadMarcas() {
-    const result = await fetchData("https://parallelum.com.br/fipe/api/v1/carros/marcas")
+    const result = await fetchData(url)
     setMarcas(result);
   }
 
   async function loadModelos(codigo) {
     if (!codigo) return
-    const result = await fetchData(`https://parallelum.com.br/fipe/api/v1/carros/marcas/${codigo}/modelos`)
+    const result = await fetchData(`${url}/${codigo}/modelos`)
     setFormData((prevState) => ({ ...prevState, marca: codigo }))
     setModelos(result.modelos);
   }
   async function loadAnos(codigoModelo, codigoAnos) {
     if (!codigoModelo || !codigoAnos) return
-    const result = await fetchData(`https://parallelum.com.br/fipe/api/v1/carros/marcas/${codigoModelo}/modelos/${codigoAnos}/anos`)
+    const result = await fetchData(`${url}/${codigoModelo}/modelos/${codigoAnos}/anos`)
     setFormData((prevState) => ({ ...prevState, codigoAnos: codigoAnos }))
     setAnos(result)
   }
   async function getCarPrice(form) {
     if (!form) return
-    const result = await fetchData(`https://parallelum.com.br/fipe/api/v1/carros/marcas/${form.codigoModelo}/modelos/${form.codigoAnos}/anos/${form.ano}`)
+    const result = await fetchData(`${url}/${form.codigoModelo}/modelos/${form.codigoAnos}/anos/${form.ano}`)
     context.setData({ modelo: result.Modelo, ano: result.AnoModelo, valor: result.Valor, isDialog: true })
   }
   function closeDialog() {
