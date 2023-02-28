@@ -42,7 +42,6 @@ border-bottom: solid 2px black;
 export default function Exercicio2() {
 
      const [objState, setObjState] = useState({ name: "Marcos", country: "Brasil", age: 22 });
-     //React.useEffect(() => console.log(objState), [objState]);
 
      const objeto1 = { name: "Marcos", country: "Japão", age: 25, altura: 1.80 }
      const objeto2 = { name: "Camiseta Polo", price: "Japão", amount: 25 }

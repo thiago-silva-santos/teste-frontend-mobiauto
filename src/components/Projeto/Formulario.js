@@ -59,7 +59,7 @@ const StyledForm = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 20px;
+  padding: 40px 0;
   box-sizing: border-box;
   gap: 30px;
   background-color: rgb(255, 255, 255);
@@ -106,7 +106,6 @@ export default function Formulario() {
   React.useEffect(() => {
 
     const isAnyInputEmpty = autocompleteModeloValue === null || autocompleteAnoValue === null;
-    console.log(isAnyInputEmpty)
 
     if (isAnyInputEmpty) {
       setSubmitEnabled(false);
@@ -140,7 +139,6 @@ export default function Formulario() {
 
   async function loadMarcas() {
     const result = await fetchData("https://parallelum.com.br/fipe/api/v1/carros/marcas")
-    console.log(result)
     setMarcas(result);
   }
 
