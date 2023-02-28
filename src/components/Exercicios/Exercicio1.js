@@ -43,7 +43,7 @@ export default function Exercicio1() {
                <div className="container">
                     <div className="title">
                          <h1>Exercício 1</h1>
-                         <p>Escrever uma função maskify, que altera todos, exceto os últimos quatro caracteres, para "#".</p>
+                         <p>{`Escrever uma função maskify, que altera todos, exceto os últimos quatro caracteres, para "#".`}</p>
 
                     </div>
 

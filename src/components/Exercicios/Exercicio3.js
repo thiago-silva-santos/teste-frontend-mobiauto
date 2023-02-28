@@ -68,8 +68,8 @@ export default function Exercicio3() {
             <div className="container">
                 <div className="title">
                     <h1>Exercício 2</h1>
-                    <p>Faça uma chamada para a api "rick and morty" e resgate informações dos seguintes personagens: Rick
-                        Sanchez, Morty Smith, Summer Smith, Beth Smith, Jerry Smith.</p>
+                    <p>{`Faça uma chamada para a api "rick and morty" e resgate informações dos seguintes personagens: Rick
+                        Sanchez, Morty Smith, Summer Smith, Beth Smith, Jerry Smith.`}</p>
                 </div>
 
                 <TextareaAutosize style={{ width: 900, height: 500, overflow: 'auto' }} value={JSON.stringify(characters, null, 2)}></TextareaAutosize>
