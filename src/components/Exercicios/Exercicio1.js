@@ -6,7 +6,7 @@ import TextField from '@mui/material/TextField';
 
 const StyledExercicio1 = styled.div`
 
-.container {
+.containerExercicio1 {
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -16,15 +16,23 @@ width: 100%;
 height: 350px;
 background: white;
 padding: 50px 0;
-border-bottom: solid 2px black;
+border-bottom: solid 1px gray;
 
 }
 
-.title {
+.titleExercicio1 {
      display: flex;
      width: 940px;
      flex-direction: column;
      text-align: center;
+
+}
+
+
+@media (max-width: 450px) {
+     .titleExercicio1 {
+          width: 250px;
+     }
 
 }
 
@@ -40,8 +48,8 @@ export default function Exercicio1() {
      return (
 
           <StyledExercicio1>
-               <div className="container">
-                    <div className="title">
+               <div className="containerExercicio1">
+                    <div className="titleExercicio1">
                          <h1>Exercício 1</h1>
                          <p>{`Escrever uma função maskify, que altera todos, exceto os últimos quatro caracteres, para "#".`}</p>
 

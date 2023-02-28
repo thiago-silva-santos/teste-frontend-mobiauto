@@ -23,9 +23,24 @@ const StyledExerciciosPage = styled.div`
      width: 100%;
      
 }
+.titleExerciciosPage {
+     background-color: #bde0fe; 
+     padding: 20px 0;
+     width: 100%;
+}
 h1 {
+     margin: 0;
      text-align: center;
 }
+@media (max-width: 450px) {
+     h1 {
+          font-size: 16px;
+     }
+}
+
+
+
+
 `
 
 export default function Exercicios() {
@@ -33,22 +48,25 @@ export default function Exercicios() {
      return (
 
           <StyledExerciciosPage>
-               <h1>Exercícios do Teste para Desenvolvedor Front-end</h1>
+               <div className="titleExerciciosPage">
+
+                    <h1>Exercícios do Teste para Desenvolvedor Front-end</h1>
+               </div>
                <div className="exerciciosPage">
 
-               <section className="exercicioBox">
-                    <Exercicio1/>
-               </section>
-               <section className="exercicioBox">
-                    <Exercicio2/>
-               </section>
-               <section className="exercicioBox">
-                    <Exercicio3/>
-               </section>
-               <section className="exercicioBox">
-                    <Exercicio4/>
-               </section>
-               
+                    <section className="exercicioBox">
+                         <Exercicio1 />
+                    </section>
+                    <section className="exercicioBox">
+                         <Exercicio2 />
+                    </section>
+                    <section className="exercicioBox">
+                         <Exercicio3 />
+                    </section>
+                    <section className="exercicioBox">
+                         <Exercicio4 />
+                    </section>
+
 
 
                </div>

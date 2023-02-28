@@ -19,17 +19,22 @@ height: 100vh;
      flex-direction: column;
      width: 350px;
      height: 350px;
-     background-color: aliceblue;
      justify-content: center;
      align-items: center;
      gap: 30px;
      border-radius: 10px;
 }
-.actions {
+.homeActions {
      display: flex;
      width: 100%;
      justify-content: space-evenly;
      
+}
+
+@media (max-width: 450px) {
+     .card {
+          width: 250px;
+     }
 }
 
 
@@ -43,7 +48,7 @@ export default function Home() {
 
                     <div className="card">
                          <h1>Teste Front-end</h1>
-                         <div className="actions">
+                         <div className="homeActions">
                               <Link href="/exercicios">
                                    <Button variant="contained" color="secondary">Exercícios</Button>
                               </Link>

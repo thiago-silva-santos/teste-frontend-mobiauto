@@ -31,6 +31,7 @@ const CustomTextField = muiStyled((props) => (
     },
 
     '&:hover': {
+      backgroundColor: 'transparent',
       '&:after': {
         content: 'none'
       },
@@ -38,6 +39,10 @@ const CustomTextField = muiStyled((props) => (
         content: 'none'
       },
       
+    },
+    '&.Mui-disabled': { 
+      backgroundColor: 'transparent',
+
     },
     '&.Mui-focused': {
       backgroundColor: 'transparent',
@@ -53,7 +58,7 @@ const CustomTextField = muiStyled((props) => (
 
 const StyledForm = styled.div`
 .formCard {
-  width: 500px;
+  width: 100%;
   height: fit-content;
   background-color: aliceblue;
   display: flex;
@@ -65,8 +70,11 @@ const StyledForm = styled.div`
   background-color: rgb(255, 255, 255);
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 2px, rgba(0, 0, 0, 0.1) 0px 1px 2px;
+  position: relative;
 }
-
+.autocompleteInput {
+  width: 400px;
+}
 form {
   display: flex;
   flex-direction: column;
@@ -76,6 +84,14 @@ form {
 .btnSubmit {
   color: white;
 }
+
+@media (max-width: 450px) {
+     .autocompleteInput {
+          width: 250px;
+     }
+}
+
+
 `
 
 export default function Formulario() {
@@ -183,7 +199,7 @@ export default function Formulario() {
                 loadModelos(value?.codigo), setAutocompleteMarcaValue(value), setAutocompleteModeloValue(null), setAutocompleteAnoValue(null), closeDialog(),
                 handleInputChange(0, value?.codigo)
             }}
-            sx={{ width: 400 }}
+            className="autocompleteInput"
             noOptionsText={"Nenhum resultado encontrado"}
             renderInput={(params) => <CustomTextField variant="filled" {...params} label="Marca" />}
           />
@@ -198,7 +214,7 @@ export default function Formulario() {
                 loadAnos(formData.codigoModelo, value?.codigo), setAutocompleteModeloValue(value), setAutocompleteAnoValue(null), closeDialog(),
                 handleInputChange(1, value?.codigo)
             }}
-            sx={{ width: 400 }}
+            className="autocompleteInput"
             noOptionsText={"Nenhum resultado encontrado"}
             renderInput={(params) => <CustomTextField variant="filled" {...params} label="Modelo" />}
           />
@@ -215,7 +231,7 @@ export default function Formulario() {
                 setSubmitEnabled(true);
 
             }}
-            sx={{ width: 400 }}
+            className="autocompleteInput"
             noOptionsText={"Nenhum resultado encontrado"}
             renderInput={(params) => <CustomTextField variant="filled" {...params} label="Ano"  />}
           /> : ""}

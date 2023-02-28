@@ -7,7 +7,7 @@ import TextField from '@mui/material/TextField';
 
 const StyledExercicio4 = styled.div`
 
-.container {
+.containerExercicio4 {
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -19,14 +19,18 @@ background: white;
 padding: 50px 0;
 }
 
-.title {
+.titleExercicio4 {
      display: flex;
      width: 940px;
      flex-direction: column;
      text-align: center;
 
 }
-
+@media (max-width: 450px) {
+     .titleExercicio4 {
+          width: 250px;
+     }
+}
 
 `
 
@@ -54,10 +58,10 @@ export default function Exercicio4() {
     return (
 
         <StyledExercicio4>
-            <div className="container">
+            <div className="containerExercicio4">
 
-                <div className="title">
-                    <h1>Exercício 2</h1>
+                <div className="titleExercicio4">
+                    <h1>Exercício 4</h1>
                     <p>Faça uma função que verifica se a primeira letra de uma string é maiúscula, retornando true ou false.</p>
                 </div>
 

@@ -23,12 +23,25 @@ const StyledDialogPreco = styled.div`
     border-radius: 50px;
     text-align: center;
 }
-h2 {
+.titleDialog {
+    text-align: center;
+    width: 100%;
     color: #444444;
 }
 .description {
     font-size: 12px;
     color: #707070;
+}
+
+@media (max-width: 450px) {
+     .dialogContainer {
+          width: 250px;
+          height: 250px;
+     }
+     .titleDialog {
+        width: 220px;
+        font-size: 14px;
+     }
 }
 `
 
@@ -38,7 +51,10 @@ export default function DialogPreco() {
     return (
         <StyledDialogPreco>
         <div className="dialogContainer">
+            <div className="titleDialog">
+
             <h2>{`Tabela Fipe: Preço ${context.data?.modelo} ${context.data?.ano}`}</h2>
+            </div>
                 <span className="price">{context.data?.valor}</span>
                 <span className="description">Este é o preço de compra do veículo</span>
         </div>

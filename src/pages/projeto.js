@@ -10,14 +10,15 @@ const StyledProjeto = styled.div`
 
 .projeto {
      width: 100%;
-     height: 100vh;
+     min-height: 100vh;
      display: flex;
      justify-content: center;
      align-items: center;
      flex-direction: column;
      background-color: #f6f1fd;
+     padding: 50px 0;
 }
-.title {
+.titleProjeto {
      width: 600px;
      display: flex;
      flex-direction: column;
@@ -31,6 +32,19 @@ h1, h2 {
      width: 500px;
      height: auto;
      margin-bottom: 40px;
+}
+
+@media (max-width: 450px) {
+     h1, h2 {
+          font-size: 16px;
+          text-align: center;
+     }
+     .formulario {
+          width: 280px;
+     }
+     .titleProjeto {
+          width: 250px;
+     }
 }
 `
 
@@ -48,7 +62,7 @@ export default function Projeto() {
 
                <StyledProjeto>
                     <div className="projeto" color="projetoBG">
-                         <div className="title">
+                         <div className="titleProjeto">
                               <h1>Tabela Fipe</h1>
                               <h2>Consulte o valor de um veículo de forma gratuita</h2>
 
